@@ -3,10 +3,8 @@ import express, { Router } from "express";
 import serverless from 'serverless-http';
 import bodyParser from "body-parser";
 import { readFileSync } from "fs";
-import { fileURLToPath } from 'url';
 import path from 'path';
 
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 import cloneDeep from "lodash.clonedeep";
 import remove from "lodash.remove";
@@ -23,7 +21,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(root, "/static")));
 
 app.get("/", (_req, res) => {
-  return res.sendFile("static/index.html", { root });
+  return res.sendFile("/static/index.html", { root });
 });
 
 app.use("/.netlify/functions/api/v1/", router);

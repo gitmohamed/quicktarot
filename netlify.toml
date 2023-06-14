@@ -1,7 +1,8 @@
+[functions]
+  external_node_modules = ["express"]
+  node_bundler = "esbuild"
+  directory = "dist/"
 [build]
   build = "npm run build"
-  functions = "functions/"
-  publish = "dist/"
-
-[functions]
-  node_bundler = "esbuild"
+  publish = "static/"
+  autoLaunch = true

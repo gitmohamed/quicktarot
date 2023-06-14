@@ -51,7 +51,7 @@
     var board = document.querySelector("#board");
 
     function fetchCards(count) {
-      fetch(`./api/v1/cards/random?n=${count}`)
+      fetch(`/.netlify/functions/api/v1/cards/random?n=${count}`)
       .then(function (response) {
         return response.json();
       })
