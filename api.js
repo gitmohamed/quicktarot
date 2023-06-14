@@ -22,7 +22,7 @@ app.get("/", (_req, res) => {
   return res.sendFile("static/index.html", { root });
 });
 
-app.use("/api/v1/", router);
+app.use(".netlify/functions/api/v1/", router);
 
 router.get("/docs", (_req, res) => {
   return res.sendFile("static/ekswagger-tarot-api-1.3-resolved.json", { root });
@@ -47,7 +47,7 @@ router.use((_req, res, next) => {
 });
 
 router.get("/", (_req, res) => {
-  return res.redirect("/api/v1/cards");
+  return res.redirect(".netlify/functions/api/v1/cards");
 });
 
 router.get("/cards", (_req, res) => {
@@ -59,7 +59,7 @@ router.get("/cards/search", (req, res) => {
   const { cards } = res.locals.rawData;
   console.log(`req.query:`, req.query);
   if (!req.query || Object.keys(req.query).length === 0)
-    return res.redirect("/api/v1/cards");
+    return res.redirect(".netlify/functions/api/v1/cards");
   let filteredCards = [];
   for (let k in req.query) {
     if (k !== "q") {
