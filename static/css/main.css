@@ -12,7 +12,11 @@ body {
   img {
     max-width: 100%;
   }
-
+  hr {
+    width: 55vw;
+    margin: 8vh auto 0 auto;
+    border-color: hsl(0deg 10.39% 36.15%);
+  }
   a {
     color: hsl(259, 100%, 64%);
     transition: color 300ms linear;
@@ -102,8 +106,8 @@ body {
   }
   button:hover {
     background: hsl(259deg 100% 76.34%);
-    color: #111;
-    transition: all 0.3s ease-in-out;
+    /* color: #111; */
+    transition: all 0.15s ease-in-out;
   }
   #prompt {
     text-decoration: line-through;
@@ -111,6 +115,7 @@ body {
 
   footer {
     text-align: center;
+    padding: 2rem;
   }
 
   footer p {

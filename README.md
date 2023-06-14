@@ -1,6 +1,6 @@
-# Quick Tarot
-
 [![Quick Tarot Screenshot][screen]](https://github.com/gitmohamed/quicktarot)
+
+# Quick Tarot
 
 Random tarot card drawing application made with NodeJS and vanilla JavaScript. Made as a simple way to draw sets of randomized cards quickly. Made by combining the Tarot Car API with the original Rider-Waite Smith cards made available by Luciella Scarlett.
 
