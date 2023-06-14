@@ -89,6 +89,7 @@ body {
   }
   button {
     font-family: inherit;
+    font-style: italic;
     padding: 1em 2em;
     background: transparent;
     border-radius: 0.8rem;
@@ -100,7 +101,7 @@ body {
     transition: all 0.3s ease-in-out;
   }
   button:hover {
-    background: whitesmoke;
+    background: hsl(259deg 100% 76.34%);
     color: #111;
     transition: all 0.3s ease-in-out;
   }
@@ -112,12 +113,19 @@ body {
     text-align: center;
   }
 
+  footer p {
+    margin: 5px auto;
+  }
+
   @media screen and (max-width: 800px) {
+    #board {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
     #board span {
         display: block;
         width: 100%;
     }
     #board span img {
-        width: 100%;
+        /* width: 100%; */
     }
   }
