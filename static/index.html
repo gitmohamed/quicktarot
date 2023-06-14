@@ -3,88 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="darkreader-lock" />
-    <title>Tarot API</title>
+    <title>Quick Tarot</title>
   </head>
   <body>
     <header>
-      <h1>Tarot API</h1>
+      <h1>Quick Tarot</h1>
       <small
-        >by 🐙&nbsp;<a href="https://github.com/ekelen" target="_blank"
-          >ekelen</a
+        >by 🐈‍⬛&nbsp;<a href="https://github.com/gitmohamed" target="_blank"
+          >gitMohamed</a
         ></small
       >
     </header>
     <main>
+      <div id="board">
+        <!-- start empty -->
+        <span style="cursor: pointer;" onclick="fetchCards(1)" class="active"><img src="images/CardBacks.png" alt="The Lovers"><p>Click to Quick Draw</p></span>
+      </div>
       <h3>
-        REST API for card names, descriptions, and divinatory meanings according
-        to AE Waite's Pictorial Key to the Tarot (1910), the companion to the
-        Rider-Waite-Smith (RWS) deck upon which most newer decks are based.
+        Click a button below to draw random cards from the deck
       </h3>
       <ul>
         <li>
-          ⭐️
-          <a href="https://github.com/ekelen/tarot-api">See the README</a> at
-          the repository root
+          <a id="one"><button>⭐️ Draw One</button></a>
         </li>
         <li>
-          ⭐️ See full documentation and try it out
-          <a href="https://app.swaggerhub.com/apis/ekswagger/tarot-api/1.3"
-            >on SwaggerHub!</a
-          >
+          <a id="three"><button>✨ Draw Three</button></a>
         </li>
         <li>
-          ⭐️ Go to
-          <a href="./api/v1/">the root endpoint!</a>
+          <a id="five"><button>🌟 Draw Five</button></a>
         </li>
       </ul>
     </main>
+    <footer>
+      <small>
+        <p><b>Made with</b></p>
+        <p><a href="https://github.com/ekelen/tarot-api">tarot-api</a> by <a href="https://github.com/ekelen">ekelen</a></p>
+        <p><a href="https://luciellaes.itch.io/rider-waite-smith-tarot-cards-cc0">Rider-Waite Smith Tarot Cards (CC0)</a> by Luciella Scarlett</p>
+      </small>
+    </footer>
   </body>
+  <link rel="stylesheet" href="/css/main.css">
+  <script>
+    var board = document.querySelector("#board");
+
+    function fetchCards(count) {
+      fetch(`./api/v1/cards/random?n=${count}`)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (response) {
+        // handle ten random cards
+        board.innerHTML = "";
+        var cards = response.cards;
+        cards.forEach((card) => {
+          createCardView(card)
+        });
+      })
+      .catch(function (error) {
+        // handle what went wrong
+      });
+    }
+
+    function createCardView(card) {
+      var img = document.createElement("img");
+      var title = document.createElement("p");
+      var span = document.createElement("span");
+
+      span.append(img)
+      span.append(title)
+
+      title.textContent = card.name
+      setTimeout(() => {
+        span.className = 'active'
+      }, 300)
+      img.src = card.image
+      img.alt = card.name
+
+      board.append(span)
+    }
+
+    document.querySelector("#one").addEventListener("click", function(e) {
+      fetchCards(1)
+    });
+
+    document.querySelector("#three").addEventListener("click", function(e) {
+      fetchCards(3)
+    });
+
+    document.querySelector("#five").addEventListener("click", function(e) {
+      fetchCards(5)
+    });
+  </script>
 </html>
-
-<style>
-  body {
-    font-family: Calibri, Helvetica, sans-serif;
-    margin-left: 0;
-    margin-right: 0;
-    background-color: hsl(0, 0%, 20%);
-    color: hsl(0, 0%, 80%);
-  }
-
-  a {
-    color: hsl(259, 100%, 64%);
-    transition: color 300ms linear;
-  }
-
-  a:visited {
-    color: hsl(259, 50%, 64%);
-  }
-
-  a:hover {
-    color: hsl(30, 100%, 61%);
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: Calibri, Futura, serif;
-    font-weight: 300;
-  }
-  header,
-  main {
-    width: 960px;
-    max-width: 95vw;
-    margin: 2rem auto;
-  }
-  a {
-    text-decoration: none;
-    font-weight: bold;
-  }
-  ul {
-    list-style: none;
-  }
-  li {
-    line-height: 1.5;
-  }
-</style>

@@ -14,7 +14,7 @@ const root =
     : __dirname;
 
 app.use(bodyParser.json());
-app.use("/static", express.static(path.join(root, "static")));
+app.use(express.static(path.join(root, "/static")));
 
 app.get("/", (_req, res) => {
   return res.sendFile("static/index.html", { root });

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&display=swap');
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Lora, Futura, sans-serif;
+    margin-left: 0;
+    margin-right: 0;
+    background-color: hsl(0deg 0% 12.15%);
+    color: hsl(0, 0%, 80%);
+  }
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: hsl(259, 100%, 64%);
+    transition: color 300ms linear;
+  }
+
+  a:visited {
+    color: hsl(259, 50%, 64%);
+  }
+
+  a:hover {
+    color: hsl(30, 100%, 61%);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Lora, Futura, serif;
+    color: white;
+    font-weight: 300;
+  }
+  header,
+  main {
+    width: 960px;
+    max-width: 95vw;
+    margin: 2rem auto;
+  }
+  main h3 {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    display: table;
+    width: 100%;
+    padding: 0;
+  }
+  li {
+    width: 33.3%;
+    float: left;
+    line-height: 1.5;
+  }
+  #board {
+    width: 100%;
+    min-height: 335px;
+    border-radius: 0.8rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+    grid-gap: 1rem;
+    padding: 1rem 0.2rem;
+    border: 1px solid hsl(0deg 10.39% 36.15%);
+  }
+  #board span {
+    display: inline-block;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+    transition: transform 0.3s ease-in-out;
+    padding: 6px;
+  }
+  #board span p {
+    margin: 5px auto;
+    text-align: center;
+  }
+  #board span.active {
+    transform: rotateY(0deg);
+    transition: transform 0.3s ease-in-out;
+  }
+  #board span img {
+    max-height: 400px;
+    display: block;
+    margin: 0 auto;
+  }
+  button {
+    font-family: inherit;
+    padding: 1em 2em;
+    background: transparent;
+    border-radius: 0.8rem;
+    border: 1px solid #454545;
+    color: whitesmoke;
+    margin: 10px;
+    width: calc(94%);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  button:hover {
+    background: whitesmoke;
+    color: #111;
+    transition: all 0.3s ease-in-out;
+  }
+  #prompt {
+    text-decoration: line-through;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  @media screen and (max-width: 800px) {
+    #board span {
+        display: block;
+        width: 100%;
+    }
+    #board span img {
+        width: 100%;
+    }
+  }

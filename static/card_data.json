@@ -5,6 +5,7 @@
       "type": "major",
       "name_short": "ar01",
       "name": "The Magician",
+      "image": "images/01-TheMagician.png",
       "value": "1",
       "value_int": 1,
       "meaning_up": "Skill, diplomacy, address, subtlety; sickness, pain, loss, disaster, snares of enemies; self-confidence, will; the Querent, if male.",
@@ -15,6 +16,7 @@
       "type": "major",
       "name_short": "ar02",
       "name": "The High Priestess",
+      "image": "images/02-TheHighPriestess.png",
       "value": "2",
       "value_int": 2,
       "meaning_up": "Secrets, mystery, the future as yet unrevealed; the woman who interests the Querent, if male; the Querent herself, if female; silence, tenacity; mystery, wisdom, science.",
@@ -25,6 +27,7 @@
       "type": "major",
       "name_short": "ar03",
       "name": "The Empress",
+      "image": "images/03-TheEmpress.png",
       "value": "3",
       "value_int": 3,
       "meaning_up": "Fruitfulness, action, initiative, length of days; the unknown, clandestine; also difficulty, doubt, ignorance.",
@@ -35,6 +38,7 @@
       "type": "major",
       "name_short": "ar04",
       "name": "The Emperor",
+      "image": "images/04-TheEmperor.png",
       "value": "4",
       "value_int": 4,
       "meaning_up": "Stability, power, protection, realization; a great person; aid, reason, conviction; also authority and will.",
@@ -45,6 +49,7 @@
       "type": "major",
       "name_short": "ar05",
       "name": "The Hierophant",
+      "image": "images/05-TheHierophant.png",
       "value": "5",
       "value_int": 5,
       "meaning_up": "Marriage, alliance, captivity, servitude; by another account, mercy and goodness; inspiration; the man to whom the Querent has recourse.",
@@ -55,6 +60,7 @@
       "type": "major",
       "name_short": "ar06",
       "name": "The Lovers",
+      "image": "images/06-TheLovers.png",
       "value": "6",
       "value_int": 6,
       "meaning_up": "Attraction, love, beauty, trials overcome.",
@@ -65,6 +71,7 @@
       "type": "major",
       "name_short": "ar07",
       "name": "The Chariot",
+      "image": "images/07-TheChariot.png",
       "value": "7",
       "value_int": 7,
       "meaning_up": "Succour, providence also war, triumph, presumption, vengeance, trouble.",
@@ -75,6 +82,7 @@
       "type": "major",
       "name_short": "ar08",
       "name": "Fortitude",
+      "image": "images/08-Strength.png",
       "value": "8",
       "value_int": 8,
       "meaning_up": "Power, energy, action, courage, magnanimity; also complete success and honours.",
@@ -85,6 +93,7 @@
       "type": "major",
       "name_short": "ar09",
       "name": "The Hermit",
+      "image": "images/09-TheHermit.png",
       "value": "9",
       "value_int": 9,
       "meaning_up": "Prudence, circumspection; also and especially treason, dissimulation, roguery, corruption.",
@@ -95,6 +104,7 @@
       "type": "major",
       "name_short": "ar10",
       "name": "Wheel Of Fortune",
+      "image": "images/10-WheelOfFortune.png",
       "value": "10",
       "value_int": 10,
       "meaning_up": "Destiny, fortune, success, elevation, luck, felicity.",
@@ -105,6 +115,7 @@
       "type": "major",
       "name_short": "ar11",
       "name": "Justice",
+      "image": "images/11-Justice.png",
       "value": "11",
       "value_int": 11,
       "meaning_up": "Equity, rightness, probity, executive; triumph of the deserving side in law.",
@@ -115,6 +126,7 @@
       "type": "major",
       "name_short": "ar12",
       "name": "The Hanged Man",
+      "image": "images/12-TheHangedMan.png",
       "value": "12",
       "value_int": 12,
       "meaning_up": "Wisdom, circumspection, discernment, trials, sacrifice, intuition, divination, prophecy.",
@@ -125,6 +137,7 @@
       "type": "major",
       "name_short": "ar13",
       "name": "Death",
+      "image": "images/13-Death.png",
       "value": "13",
       "value_int": 13,
       "meaning_up": "End, mortality, destruction, corruption also, for a man, the loss of a benefactor for a woman, many contrarieties; for a maid, failure of marriage projects.",
@@ -135,6 +148,7 @@
       "type": "major",
       "name_short": "ar14",
       "name": "Temperance",
+      "image": "images/14-Temperance.png",
       "value": "14",
       "value_int": 14,
       "meaning_up": "Economy, moderation, frugality, management, accommodation.",
@@ -145,6 +159,7 @@
       "type": "major",
       "name_short": "ar15",
       "name": "The Devil",
+      "image": "images/15-TheDevil.png",
       "value": "15",
       "value_int": 15,
       "meaning_up": "Ravage, violence, vehemence, extraordinary efforts, force, fatality; that which is predestined but is not for this reason evil.",
@@ -155,6 +170,7 @@
       "type": "major",
       "name_short": "ar16",
       "name": "The Tower",
+      "image": "images/16-TheTower.png",
       "value": "16",
       "value_int": 16,
       "meaning_up": "Misery, distress, indigence, adversity, calamity, disgrace, deception, ruin. It is a card in particular of unforeseen catastrophe.",
@@ -165,6 +181,7 @@
       "type": "major",
       "name_short": "ar17",
       "name": "The Star",
+      "image": "images/17-TheStar.png",
       "value": "17",
       "value_int": 17,
       "meaning_up": "Loss, theft, privation, abandonment; another reading says-hope and bright prospects,",
@@ -175,6 +192,7 @@
       "type": "major",
       "name_short": "ar18",
       "name": "The Moon",
+      "image": "images/18-TheMoon.png",
       "value": "18",
       "value_int": 18,
       "meaning_up": "Hidden enemies, danger, calumny, darkness, terror, deception, occult forces, error.",
@@ -185,6 +203,7 @@
       "type": "major",
       "name_short": "ar19",
       "name": "The Sun",
+      "image": "images/19-TheSun.png",
       "value": "19",
       "value_int": 19,
       "meaning_up": "Material happiness, fortunate marriage, contentment.",
@@ -195,6 +214,7 @@
       "type": "major",
       "name_short": "ar20",
       "name": "The Last Judgment",
+      "image": "images/20-Judgement.png",
       "value": "20",
       "value_int": 20,
       "meaning_up": "Change of position, renewal, outcome. Another account specifies total loss though lawsuit.",
@@ -205,6 +225,7 @@
       "type": "major",
       "name_short": "ar00",
       "name": "The Fool",
+      "image": "images/00-TheFool.png",
       "value": "ZERO",
       "value_int": 0,
       "meaning_up": "Folly, mania, extravagance, intoxication, delirium, frenzy, bewrayment.",
@@ -215,6 +236,7 @@
       "type": "major",
       "name_short": "ar21",
       "name": "The World",
+      "image": "images/21-TheWorld.png",
       "value": "21",
       "value_int": 21,
       "meaning_up": "Assured success, recompense, voyage, route, emigration, flight, change of place.",
@@ -223,6 +245,7 @@
     },
     {
       "name": "Page of Wands",
+      "image": "images/Wands11.png",
       "name_short": "wapa",
       "value": "page",
       "value_int": 11,
@@ -234,6 +257,7 @@
     },
     {
       "name": "Knight of Wands",
+      "image": "images/Wands12.png",
       "name_short": "wakn",
       "value": "knight",
       "value_int": 12,
@@ -245,6 +269,7 @@
     },
     {
       "name": "Queen of Wands",
+      "image": "images/Wands13.png",
       "name_short": "waqu",
       "value": "queen",
       "value_int": 13,
@@ -256,6 +281,7 @@
     },
     {
       "name": "King of Wands",
+      "image": "images/Wands14.png",
       "name_short": "waki",
       "value": "king",
       "value_int": 14,
@@ -267,6 +293,7 @@
     },
     {
       "name": "Ace of Wands",
+      "image": "images/Wands01.png",
       "name_short": "waac",
       "value": "ace",
       "value_int": 1,
@@ -278,6 +305,7 @@
     },
     {
       "name": "Two of Wands",
+      "image": "images/Wands02.png",
       "name_short": "wa02",
       "value": "two",
       "value_int": 2,
@@ -289,6 +317,7 @@
     },
     {
       "name": "Three of Wands",
+      "image": "images/Wands03.png",
       "name_short": "wa03",
       "value": "three",
       "value_int": 3,
@@ -300,6 +329,7 @@
     },
     {
       "name": "Four of Wands",
+      "image": "images/Wands04.png",
       "name_short": "wa04",
       "value": "four",
       "value_int": 4,
@@ -311,6 +341,7 @@
     },
     {
       "name": "Five of Wands",
+      "image": "images/Wands05.png",
       "name_short": "wa05",
       "value": "five",
       "value_int": 5,
@@ -322,6 +353,7 @@
     },
     {
       "name": "Six of Wands",
+      "image": "images/Wands06.png",
       "name_short": "wa06",
       "value": "six",
       "value_int": 6,
@@ -333,6 +365,7 @@
     },
     {
       "name": "Seven of Wands",
+      "image": "images/Wands07.png",
       "name_short": "wa07",
       "value": "seven",
       "value_int": 7,
@@ -344,6 +377,7 @@
     },
     {
       "name": "Eight of Wands",
+      "image": "images/Wands08.png",
       "name_short": "wa08",
       "value": "eight",
       "value_int": 8,
@@ -355,6 +389,7 @@
     },
     {
       "name": "Nine of Wands",
+      "image": "images/Wands09.png",
       "name_short": "wa09",
       "value": "nine",
       "value_int": 9,
@@ -366,6 +401,7 @@
     },
     {
       "name": "Ten of Wands",
+      "image": "images/Wands10.png",
       "name_short": "wa10",
       "value": "ten",
       "value_int": 10,
@@ -377,6 +413,7 @@
     },
     {
       "name": "Page of Cups",
+      "image": "images/Cups11.png",
       "name_short": "cupa",
       "value": "page",
       "value_int": 11,
@@ -388,6 +425,7 @@
     },
     {
       "name": "Knight of Cups",
+      "image": "images/Cups12.png",
       "name_short": "cukn",
       "value": "knight",
       "value_int": 12,
@@ -399,6 +437,7 @@
     },
     {
       "name": "Queen of Cups",
+      "image": "images/Cups13.png",
       "name_short": "cuqu",
       "value": "queen",
       "value_int": 13,
@@ -410,6 +449,7 @@
     },
     {
       "name": "King of Cups",
+      "image": "images/Cups14.png",
       "name_short": "cuki",
       "value": "king",
       "value_int": 14,
@@ -421,6 +461,7 @@
     },
     {
       "name": "Ace of Cups",
+      "image": "images/Cups01.png",
       "name_short": "cuac",
       "value": "ace",
       "value_int": 1,
@@ -432,6 +473,7 @@
     },
     {
       "name": "Two of Cups",
+      "image": "images/Cups02.png",
       "name_short": "cu02",
       "value": "two",
       "value_int": 2,
@@ -443,6 +485,7 @@
     },
     {
       "name": "Three of Cups",
+      "image": "images/Cups03.png",
       "name_short": "cu03",
       "value": "three",
       "value_int": 3,
@@ -454,6 +497,7 @@
     },
     {
       "name": "Four of Cups",
+      "image": "images/Cups04.png",
       "name_short": "cu04",
       "value": "four",
       "value_int": 4,
@@ -465,6 +509,7 @@
     },
     {
       "name": "Five of Cups",
+      "image": "images/Cups05.png",
       "name_short": "cu05",
       "value": "five",
       "value_int": 5,
@@ -476,6 +521,7 @@
     },
     {
       "name": "Six of Cups",
+      "image": "images/Cups06.png",
       "name_short": "cu06",
       "value": "six",
       "value_int": 6,
@@ -487,6 +533,7 @@
     },
     {
       "name": "Seven of Cups",
+      "image": "images/Cups07.png",
       "name_short": "cu07",
       "value": "seven",
       "value_int": 7,
@@ -498,6 +545,7 @@
     },
     {
       "name": "Eight of Cups",
+      "image": "images/Cups08.png",
       "name_short": "cu08",
       "value": "eight",
       "value_int": 8,
@@ -509,6 +557,7 @@
     },
     {
       "name": "Nine of Cups",
+      "image": "images/Cups09.png",
       "name_short": "cu09",
       "value": "nine",
       "value_int": 9,
@@ -520,6 +569,7 @@
     },
     {
       "name": "Ten of Cups",
+      "image": "images/Cups10.png",
       "name_short": "cu10",
       "value": "ten",
       "value_int": 10,
@@ -531,6 +581,7 @@
     },
     {
       "name": "Page of Pentacles",
+      "image": "images/Pentacles11.png",
       "name_short": "pepa",
       "value": "page",
       "value_int": 11,
@@ -542,6 +593,7 @@
     },
     {
       "name": "Knight of Pentacles",
+      "image": "images/Pentacles12.png",
       "name_short": "pekn",
       "value": "knight",
       "value_int": 12,
@@ -553,6 +605,7 @@
     },
     {
       "name": "Queen of Pentacles",
+      "image": "images/Pentacles13.png",
       "name_short": "pequ",
       "value": "queen",
       "value_int": 13,
@@ -564,6 +617,7 @@
     },
     {
       "name": "King of Pentacles",
+      "image": "images/Pentacles14.png",
       "name_short": "peki",
       "value": "king",
       "value_int": 14,
@@ -575,6 +629,7 @@
     },
     {
       "name": "Ace of Pentacles",
+      "image": "images/Pentacles01.png",
       "name_short": "peac",
       "value": "ace",
       "value_int": 1,
@@ -586,6 +641,7 @@
     },
     {
       "name": "Two of Pentacles",
+      "image": "images/Pentacles02.png",
       "name_short": "pe02",
       "value": "two",
       "value_int": 2,
@@ -597,6 +653,7 @@
     },
     {
       "name": "Three of Pentacles",
+      "image": "images/Pentacles03.png",
       "name_short": "pe03",
       "value": "three",
       "value_int": 3,
@@ -608,6 +665,7 @@
     },
     {
       "name": "Four of Pentacles",
+      "image": "images/Pentacles04.png",
       "name_short": "pe04",
       "value": "four",
       "value_int": 4,
@@ -619,6 +677,7 @@
     },
     {
       "name": "Five of Pentacles",
+      "image": "images/Pentacles05.png",
       "name_short": "pe05",
       "value": "five",
       "value_int": 5,
@@ -630,6 +689,7 @@
     },
     {
       "name": "Six of Pentacles",
+      "image": "images/Pentacles06.png",
       "name_short": "pe06",
       "value": "six",
       "value_int": 6,
@@ -641,6 +701,7 @@
     },
     {
       "name": "Seven of Pentacles",
+      "image": "images/Pentacles07.png",
       "name_short": "pe07",
       "value": "seven",
       "value_int": 7,
@@ -652,6 +713,7 @@
     },
     {
       "name": "Eight of Pentacles",
+      "image": "images/Pentacles08.png",
       "name_short": "pe08",
       "value": "eight",
       "value_int": 8,
@@ -663,6 +725,7 @@
     },
     {
       "name": "Nine of Pentacles",
+      "image": "images/Pentacles09.png",
       "name_short": "pe09",
       "value": "nine",
       "value_int": 9,
@@ -674,6 +737,7 @@
     },
     {
       "name": "Ten of Pentacles",
+      "image": "images/Pentacles10.png",
       "name_short": "pe10",
       "value": "ten",
       "value_int": 10,
@@ -685,6 +749,7 @@
     },
     {
       "name": "Page of Swords",
+      "image": "images/Swords11.png",
       "name_short": "swpa",
       "value": "page",
       "value_int": 11,
@@ -696,6 +761,7 @@
     },
     {
       "name": "Knight of Swords",
+      "image": "images/Swords12.png",
       "name_short": "swkn",
       "value": "knight",
       "value_int": 12,
@@ -707,6 +773,7 @@
     },
     {
       "name": "Queen of Swords",
+      "image": "images/Swords13.png",
       "name_short": "swqu",
       "value": "queen",
       "value_int": 13,
@@ -718,6 +785,7 @@
     },
     {
       "name": "King of Swords",
+      "image": "images/Swords14.png",
       "name_short": "swki",
       "value": "king",
       "value_int": 14,
@@ -729,6 +797,7 @@
     },
     {
       "name": "Ace of Swords",
+      "image": "images/Swords01.png",
       "name_short": "swac",
       "value": "ace",
       "value_int": 1,
@@ -740,6 +809,7 @@
     },
     {
       "name": "Two of Swords",
+      "image": "images/Swords02.png",
       "name_short": "sw02",
       "value": "two",
       "value_int": 2,
@@ -751,6 +821,7 @@
     },
     {
       "name": "Three of Swords",
+      "image": "images/Swords03.png",
       "name_short": "sw03",
       "value": "three",
       "value_int": 3,
@@ -762,6 +833,7 @@
     },
     {
       "name": "Four of Swords",
+      "image": "images/Swords04.png",
       "name_short": "sw04",
       "value": "four",
       "value_int": 4,
@@ -773,6 +845,7 @@
     },
     {
       "name": "Five of Swords",
+      "image": "images/Swords05.png",
       "name_short": "sw05",
       "value": "five",
       "value_int": 5,
@@ -784,6 +857,7 @@
     },
     {
       "name": "Six of Swords",
+      "image": "images/Swords06.png",
       "name_short": "sw06",
       "value": "six",
       "value_int": 6,
@@ -795,6 +869,7 @@
     },
     {
       "name": "Seven of Swords",
+      "image": "images/Swords07.png",
       "name_short": "sw07",
       "value": "seven",
       "value_int": 7,
@@ -806,6 +881,7 @@
     },
     {
       "name": "Eight of Swords",
+      "image": "images/Swords08.png",
       "name_short": "sw08",
       "value": "eight",
       "value_int": 8,
@@ -817,6 +893,7 @@
     },
     {
       "name": "Nine of Swords",
+      "image": "images/Swords09.png",
       "name_short": "sw09",
       "value": "nine",
       "value_int": 9,
@@ -828,6 +905,7 @@
     },
     {
       "name": "Ten of Swords",
+      "image": "images/Swords10.png",
       "name_short": "sw10",
       "value": "ten",
       "value_int": 10,
