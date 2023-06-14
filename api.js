@@ -14,7 +14,7 @@ const router = Router();
 
 const root =
   process.env.NODE_ENV === "production"
-    ? path.join(__dirname, "../")
+    ? path.join(__dirname, "..")
     : __dirname;
 
 app.use(bodyParser.json());
