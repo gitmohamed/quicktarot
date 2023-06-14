@@ -14,25 +14,25 @@ const router = Router();
 
 const root =
   process.env.NODE_ENV === "production"
-    ? path.join(__dirname, "..")
+    ? path.join(__dirname, "../")
     : __dirname;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(root, "/static")));
 
 app.get("/", (_req, res) => {
-  return res.sendFile(__dirname + "/static/index.html", { root });
+  return res.sendFile(path.join(root, "/static/index.html"), { root });
 });
 
 app.use("/.netlify/functions/api/v1/", router);
 
 router.get("/docs", (_req, res) => {
-  return res.sendFile(__dirname + "/static/ekswagger-tarot-api-1.3-resolved.json", { root });
+  return res.sendFile(path.join(root, "/static/ekswagger-tarot-api-1.3-resolved.json"), { root });
 });
 
 router.use((_req, res, next) => {
   res.locals.rawData = JSON.parse(
-    readFileSync(__dirname + "/static/card_data.json", "utf8")
+    readFileSync(path.join(root, "/static/card_data.json"), "utf8")
   );
   return next();
 });
