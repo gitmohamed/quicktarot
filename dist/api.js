@@ -15,25 +15,24 @@ var _lodash2 = _interopRequireDefault(require("lodash.remove"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-var _dirname = _path["default"].dirname(__filename);
 var app = (0, _express["default"])();
 var router = (0, _express.Router)();
-var root = process.env.NODE_ENV === "production" ? _path["default"].join(_dirname, "..") : _dirname;
+var root = process.env.NODE_ENV === "production" ? _path["default"].join(__dirname, "..") : __dirname;
 app.use(_bodyParser["default"].json());
 app.use(_express["default"]["static"](_path["default"].join(root, "/static")));
 app.get("/", function (_req, res) {
-  return res.sendFile("/static/index.html", {
+  return res.sendFile("./index.html", {
     root: root
   });
 });
 app.use("/.netlify/functions/api/v1/", router);
 router.get("/docs", function (_req, res) {
-  return res.sendFile("static/ekswagger-tarot-api-1.3-resolved.json", {
+  return res.sendFile("./ekswagger-tarot-api-1.3-resolved.json", {
     root: root
   });
 });
 router.use(function (_req, res, next) {
-  res.locals.rawData = JSON.parse((0, _fs.readFileSync)("static/card_data.json", "utf8"));
+  res.locals.rawData = JSON.parse((0, _fs.readFileSync)("./card_data.json", "utf8"));
   return next();
 });
 router.use(function (_req, res, next) {

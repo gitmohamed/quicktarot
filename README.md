@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/79e1e1a6-8fcb-4e4d-81e5-8e7d6325ca74/deploy-status)](https://app.netlify.com/sites/quicktarot/deploys)
 [![Quick Tarot Screenshot][screen]](https://quicktarot.netlify.app/)
 
 # Quick Tarot

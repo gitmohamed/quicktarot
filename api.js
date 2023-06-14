@@ -5,7 +5,6 @@ import bodyParser from "body-parser";
 import { readFileSync } from "fs";
 import path from 'path';
 
-const __dirname = path.dirname(__filename);
 import cloneDeep from "lodash.clonedeep";
 import remove from "lodash.remove";
 
@@ -21,18 +20,18 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(root, "/static")));
 
 app.get("/", (_req, res) => {
-  return res.sendFile(path.join(root, "/static/index.html"), { root });
+  return res.sendFile("./index.html", { root });
 });
 
 app.use("/.netlify/functions/api/v1/", router);
 
 router.get("/docs", (_req, res) => {
-  return res.sendFile(path.join(root, "/static/ekswagger-tarot-api-1.3-resolved.json"), { root });
+  return res.sendFile("./ekswagger-tarot-api-1.3-resolved.json", { root });
 });
 
 router.use((_req, res, next) => {
   res.locals.rawData = JSON.parse(
-    readFileSync(path.join(root, "/static/card_data.json"), "utf8")
+    readFileSync("./card_data.json", "utf8")
   );
   return next();
 });
