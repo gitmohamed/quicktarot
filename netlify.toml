@@ -1,4 +1,7 @@
 [build]
   build = "npm run build"
-  functions = "dist/"
-  publish = "static"
+  functions = "functions/"
+  publish = "dist/"
+
+[functions]
+  node_bundler = "esbuild"

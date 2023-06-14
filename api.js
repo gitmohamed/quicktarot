@@ -1,14 +1,18 @@
 'use strict';
-const express = require("express");
-const serverless = require('serverless-http');
-const bodyParser = require("body-parser");
-const fs = require("fs");
-const path = require("path");
-const cloneDeep = require("lodash.clonedeep");
-const remove = require("lodash.remove");
+import express, { Router } from "express";
+import serverless from 'serverless-http';
+import bodyParser from "body-parser";
+import { readFileSync } from "fs";
+import { fileURLToPath } from 'url';
+import path from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+import cloneDeep from "lodash.clonedeep";
+import remove from "lodash.remove";
 
 const app = express();
-const router = express.Router();
+const router = Router();
 
 const root =
   process.env.NODE_ENV === "production"
@@ -22,7 +26,7 @@ app.get("/", (_req, res) => {
   return res.sendFile("static/index.html", { root });
 });
 
-app.use("/api/v1/", router);
+app.use("/.netlify/functions/api/v1/", router);
 
 router.get("/docs", (_req, res) => {
   return res.sendFile("static/ekswagger-tarot-api-1.3-resolved.json", { root });
@@ -30,7 +34,7 @@ router.get("/docs", (_req, res) => {
 
 router.use((_req, res, next) => {
   res.locals.rawData = JSON.parse(
-    fs.readFileSync("static/card_data.json", "utf8")
+    readFileSync("static/card_data.json", "utf8")
   );
   return next();
 });
@@ -47,7 +51,7 @@ router.use((_req, res, next) => {
 });
 
 router.get("/", (_req, res) => {
-  return res.redirect("/api/v1/cards");
+  return res.redirect("/.netlify/functions/api/v1/cards");
 });
 
 router.get("/cards", (_req, res) => {
@@ -59,7 +63,7 @@ router.get("/cards/search", (req, res) => {
   const { cards } = res.locals.rawData;
   console.log(`req.query:`, req.query);
   if (!req.query || Object.keys(req.query).length === 0)
-    return res.redirect("/api/v1/cards");
+    return res.redirect("/.netlify/functions/api/v1/cards");
   let filteredCards = [];
   for (let k in req.query) {
     if (k !== "q") {
@@ -157,5 +161,4 @@ app.listen(port, () => {
   console.log("RWS API Server now running on port", port);
 });
 
-
-module.exports.handler = serverless(app);
+export const handler = serverless(app);

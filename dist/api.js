@@ -1,30 +1,38 @@
 'use strict';
 
-var express = require("express");
-var serverless = require('serverless-http');
-var bodyParser = require("body-parser");
-var fs = require("fs");
-var path = require("path");
-var cloneDeep = require("lodash.clonedeep");
-var remove = require("lodash.remove");
-var app = express();
-var router = express.Router();
-var root = process.env.NODE_ENV === "production" ? path.join(__dirname, "..") : __dirname;
-app.use(bodyParser.json());
-app.use(express["static"](path.join(root, "/static")));
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handler = void 0;
+var _express = _interopRequireWildcard(require("express"));
+var _serverlessHttp = _interopRequireDefault(require("serverless-http"));
+var _bodyParser = require("body-parser");
+var _fs = require("fs");
+var _path = require("path");
+var _lodash = _interopRequireDefault(require("lodash.clonedeep"));
+var _lodash2 = _interopRequireDefault(require("lodash.remove"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var app = (0, _express["default"])();
+var router = (0, _express.Router)();
+var root = process.env.NODE_ENV === "production" ? (0, _path.join)(__dirname, "..") : __dirname;
+app.use((0, _bodyParser.json)());
+app.use(_express["default"]["static"]((0, _path.join)(root, "/static")));
 app.get("/", function (_req, res) {
   return res.sendFile("static/index.html", {
     root: root
   });
 });
-app.use("/api/v1/", router);
+app.use("/.netlify/functions/api/v1/", router);
 router.get("/docs", function (_req, res) {
   return res.sendFile("static/ekswagger-tarot-api-1.3-resolved.json", {
     root: root
   });
 });
 router.use(function (_req, res, next) {
-  res.locals.rawData = JSON.parse(fs.readFileSync("static/card_data.json", "utf8"));
+  res.locals.rawData = JSON.parse((0, _fs.readFileSync)("static/card_data.json", "utf8"));
   return next();
 });
 router.use(function (_req, res, next) {
@@ -35,7 +43,7 @@ router.use(function (_req, res, next) {
   return next();
 });
 router.get("/", function (_req, res) {
-  return res.redirect("/api/v1/cards");
+  return res.redirect("/.netlify/functions/api/v1/cards");
 });
 router.get("/cards", function (_req, res) {
   var cards = res.locals.rawData.cards;
@@ -47,7 +55,7 @@ router.get("/cards", function (_req, res) {
 router.get("/cards/search", function (req, res) {
   var cards = res.locals.rawData.cards;
   console.log("req.query:", req.query);
-  if (!req.query || Object.keys(req.query).length === 0) return res.redirect("/api/v1/cards");
+  if (!req.query || Object.keys(req.query).length === 0) return res.redirect("/.netlify/functions/api/v1/cards");
   var filteredCards = [];
   var _loop = function _loop(k) {
     if (k !== "q") {
@@ -77,13 +85,13 @@ router.get("/cards/search", function (req, res) {
 router.get("/cards/random", function (req, res) {
   var cards = res.locals.rawData.cards;
   var n = req.query.n > 0 && req.query.n < 79 ? req.query.n : 78;
-  var cardPool = cloneDeep(cards);
+  var cardPool = (0, _lodash["default"])(cards);
   var returnCards = [];
   var _loop2 = function _loop2() {
     var id = Math.floor(Math.random() * (78 - i));
     var card = cardPool[id];
     returnCards.push(card);
-    remove(cardPool, function (c) {
+    (0, _lodash2["default"])(cardPool, function (c) {
       return c.name_short === card.name_short;
     });
   };
@@ -160,4 +168,5 @@ var port = process.env.PORT || 8000;
 app.listen(port, function () {
   console.log("RWS API Server now running on port", port);
 });
-module.exports.handler = serverless(app);
+var handler = (0, _serverlessHttp["default"])(app);
+exports.handler = handler;
