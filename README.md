@@ -63,8 +63,8 @@ https://tarot-api-3hv5.onrender.com/api/v1/cards/wakn
 2. Clone or fork this repository and install dependencies locally. Requires Node 10.0.0 or higher, and npm 6.0.0 or higher.
 
 ```sh
-git clone https://github.com/ekelen/tarot-api.git
-# or git@github.com:ekelen/tarot-api.git
+git clone https://github.com/gitmohamed/quicktarot.git
+# or git@github.com:gitmohamed/quicktarot.git
 
 # -OR- click fork on this project's Github page, then:
 
@@ -74,7 +74,7 @@ git clone https://github.com/YOUR-USERNAME/tarot-api.git
 Then:
 
 ```sh
-cd tarot-api
+cd quicktarot
 
 npm install
 
@@ -82,31 +82,3 @@ npm run dev
 ```
 
 ---
-
-## 🗞 Updates
-
-### 2023/05/12
-
-- **Important** render.com stopped supporting my pretty URL (👎), so the project must be accessed at https://tarot-api-3hv5.onrender.com/.
-
-### 2023/12/30
-
-- **Important** Heroku stopped offering free dynos (👎), so you must replace all references to https://rws-cards-api.herokuapp.com to ~~tarot-api.onrender.com~~ https://tarot-api-3hv5.onrender.com (see May update) if you are using this API in your app.
-
-### 2022/06/18
-
-- Updated Swagger docs
-- Added a `courts` endpoint (no specific rank parameter required)
-- Bumped `nodemon`
-- `require` typo fix
-
-### 2021/01/25
-
-- Linted, finished, and published the Swagger documentation
-- Removed unused packages
-- Reorganized source files to remove extraneous files from build
-- Updated other documentation
-
-### 2020/10/17
-
-- Now supports CORS, so you can use this pretty much anywhere 🧙‍♂️
