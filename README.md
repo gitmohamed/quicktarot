@@ -1,4 +1,4 @@
-[![Quick Tarot Screenshot][screen]](https://github.com/gitmohamed/quicktarot)
+[![Quick Tarot Screenshot][screen]](https://quicktarot.netlify.app/)
 
 # Quick Tarot
 
