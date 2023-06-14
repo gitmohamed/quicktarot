@@ -1,4 +1,6 @@
+'use strict';
 const express = require("express");
+const serverless = require('serverless-http');
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
@@ -154,3 +156,6 @@ const port = process.env.PORT || 8000;
 app.listen(port, () => {
   console.log("RWS API Server now running on port", port);
 });
+
+
+module.exports.handler = serverless(app);

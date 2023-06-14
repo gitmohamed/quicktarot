@@ -22,7 +22,8 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.range": "^3.2.0",
     "lodash.remove": "^4.7.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
