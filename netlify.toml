@@ -1,2 +1,4 @@
 [build]
-  functions = ".netlify/functions/"
+  build = "npm run build"
+  functions = "dist/"
+  publish = "static"

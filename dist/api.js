@@ -17,7 +17,7 @@ app.get("/", function (_req, res) {
     root: root
   });
 });
-app.use(".netlify/functions/api/v1/", router);
+app.use("/api/v1/", router);
 router.get("/docs", function (_req, res) {
   return res.sendFile("static/ekswagger-tarot-api-1.3-resolved.json", {
     root: root
