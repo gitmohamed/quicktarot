@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/79e1e1a6-8fcb-4e4d-81e5-8e7d6325ca74/deploy-status)](https://app.netlify.com/sites/quicktarot/deploys)
+
 [![Quick Tarot Screenshot][screen]](https://quicktarot.netlify.app/)
 
 # Quick Tarot
@@ -7,7 +8,7 @@ Random tarot card drawing application made with NodeJS and vanilla JavaScript ho
 
 ---
 
-# Tarot Card API
+## Tarot Card API
 
 > For all your cybermysticism needs. 🔮
 
@@ -77,7 +78,7 @@ git clone https://github.com/gitmohamed/quicktarot.git
 
 # -OR- click fork on this project's Github page, then:
 
-git clone https://github.com/YOUR-USERNAME/tarot-api.git
+git clone https://github.com/YOUR-USERNAME/quicktarot.git
 ```
 
 Then:
