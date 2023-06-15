@@ -2,7 +2,7 @@
   external_node_modules = ["express"]
   node_bundler = "esbuild"
   directory = "dist/"
-  included_files = "static/**"
+  included_files = ["static/**.json"]
 [build]
   base = "/"
   build = "npm run build"
