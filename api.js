@@ -157,4 +157,4 @@ app.listen(port, () => {
   console.log("RWS API Server now running on port", port);
 });
 
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
