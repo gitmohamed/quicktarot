@@ -19,6 +19,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "fs": "0.0.1-security",
+    "lodash": "^4.17.21",
     "lodash.clonedeep": "^4.5.0",
     "lodash.range": "^3.2.0",
     "lodash.remove": "^4.7.0",

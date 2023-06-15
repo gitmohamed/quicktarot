@@ -85,7 +85,7 @@ body {
   #board span.active {
     will-change: transform;
     transform: rotateY(0deg);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.18, 1.13, 0.9, 1.15);
   }
   #board span img {
     max-height: 400px;

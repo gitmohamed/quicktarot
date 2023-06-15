@@ -21,7 +21,7 @@ var root = process.env.NODE_ENV === "production" ? _path["default"].join(__dirna
 app.use(_bodyParser["default"].json());
 app.use(_express["default"]["static"](_path["default"].join(root, "/static")));
 app.get("/", function (_req, res) {
-  return res.sendFile("./index.html", {
+  return res.sendFile("./static/index.html", {
     root: root
   });
 });

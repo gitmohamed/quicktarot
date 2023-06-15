@@ -50,8 +50,8 @@
   <script>
     var board = document.querySelector("#board");
 
-    function fetchCards(count) {
-      fetch(`/.netlify/functions/api/v1/cards/random?n=${count}`)
+    async function fetchCards(count) {
+      await fetch(`/.netlify/functions/api/v1/cards/random?n=${count}`)
       .then(function (response) {
         return response.json();
       })
@@ -86,25 +86,25 @@
       board.append(span)
     }
 
-    function drawOneFromApi(e) {
+    async function drawOneFromApi(e) {
       if(!confirm("Confirm your query?")) {
         return false;
       }
-      fetchCards(1)
+      await fetchCards(1)
     }
 
-    function drawThreeFromApi(e) {
+    async function drawThreeFromApi(e) {
       if(!confirm("Confirm your query?")) {
         return false;
       }
-      fetchCards(3)
+      await fetchCards(3)
     }
 
-    function drawFiveFromApi(e) {
+    async function drawFiveFromApi(e) {
       if(!confirm("Confirm your query?")) {
         return false;
       }
-      fetchCards(5)
+      await fetchCards(5)
     }
 
     document.querySelector("#one").addEventListener("click", drawOneFromApi);

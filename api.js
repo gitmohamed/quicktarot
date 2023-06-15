@@ -1,14 +1,14 @@
-import express, { Router } from "express";
-import serverless from 'serverless-http';
-import bodyParser from "body-parser";
-import { readFileSync } from "fs";
-import path from 'path';
+const express = require("express");
+const serverless = require('serverless-http');
+const bodyParser = require("body-parser");
+const fs = require("fs");
+const path = require('path');
 
-import cloneDeep from "lodash.clonedeep";
-import remove from "lodash.remove";
+const cloneDeep = require("lodash").cloneDeep;
+const remove = require("lodash").remove;
 
 const app = express();
-const router = Router();
+const router = express.Router();
 
 const root =
   process.env.NODE_ENV === "production"
@@ -30,7 +30,7 @@ router.get("/docs", (_req, res) => {
 
 router.use((_req, res, next) => {
   res.locals.rawData = JSON.parse(
-    readFileSync("./static/card_data.json", "utf8")
+    fs.readFileSync("./static/card_data.json", "utf8")
   );
   return next();
 });
@@ -157,4 +157,4 @@ app.listen(port, () => {
   console.log("RWS API Server now running on port", port);
 });
 
-export const handler = serverless(app);
+module.exports = serverless(app);
