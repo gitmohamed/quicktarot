@@ -1,4 +1,3 @@
-'use strict';
 import express, { Router } from "express";
 import serverless from 'serverless-http';
 import bodyParser from "body-parser";
@@ -20,18 +19,18 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(root, "/static")));
 
 app.get("/", (_req, res) => {
-  return res.sendFile("./index.html", { root });
+  return res.sendFile("./static/index.html", { root });
 });
 
 app.use("/.netlify/functions/api/v1/", router);
 
 router.get("/docs", (_req, res) => {
-  return res.sendFile("./ekswagger-tarot-api-1.3-resolved.json", { root });
+  return res.sendFile("./static/ekswagger-tarot-api-1.3-resolved.json", { root });
 });
 
 router.use((_req, res, next) => {
   res.locals.rawData = JSON.parse(
-    readFileSync("./card_data.json", "utf8")
+    readFileSync("./static/card_data.json", "utf8")
   );
   return next();
 });

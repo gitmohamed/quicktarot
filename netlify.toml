@@ -3,6 +3,7 @@
   node_bundler = "esbuild"
   directory = "dist/"
 [build]
+  base = "/"
   build = "npm run build"
   publish = "static/"
   autoLaunch = true

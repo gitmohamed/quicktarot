@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 Object.defineProperty(exports, "__esModule", {
@@ -27,12 +27,12 @@ app.get("/", function (_req, res) {
 });
 app.use("/.netlify/functions/api/v1/", router);
 router.get("/docs", function (_req, res) {
-  return res.sendFile("./ekswagger-tarot-api-1.3-resolved.json", {
+  return res.sendFile("./static/ekswagger-tarot-api-1.3-resolved.json", {
     root: root
   });
 });
 router.use(function (_req, res, next) {
-  res.locals.rawData = JSON.parse((0, _fs.readFileSync)("./card_data.json", "utf8"));
+  res.locals.rawData = JSON.parse((0, _fs.readFileSync)("./static/card_data.json", "utf8"));
   return next();
 });
 router.use(function (_req, res, next) {
