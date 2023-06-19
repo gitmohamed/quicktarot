@@ -57,9 +57,10 @@ body {
     padding: 0;
   }
   li {
-    width: 33.3%;
+    width: 32.3%;
     float: left;
     line-height: 1.5;
+    margin: 5px 0.5%;
   }
   #board {
     width: 100%;
@@ -68,7 +69,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
     grid-gap: 1rem;
     padding: 1rem 0.2rem;
-    border: 1px solid hsl(0deg 10.39% 36.15%);
+    /* border: 1px solid hsl(0deg 10.39% 36.15%); */
   }
   #board span {
     display: inline-block;
@@ -114,11 +115,14 @@ body {
   }
 
   footer {
-    text-align: center;
-    padding: 2rem;
+    width: 930px;
+    max-width: 95vw;
+    margin: 2rem auto;
+    font-size: 13px;
   }
 
   footer p {
+    text-align: right;
     margin: 5px auto;
   }
 
