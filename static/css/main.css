@@ -2,6 +2,23 @@
 * {
     box-sizing: border-box;
 }
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 2s ease-in-out 100ms infinite forwards;
+}
+
 body {
     font-family: Lora, Futura, sans-serif;
     margin-left: 0;
@@ -90,7 +107,7 @@ body {
   #board span img {
     height: 320px;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
   }
   button {
     font-family: inherit;

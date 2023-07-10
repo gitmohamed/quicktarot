@@ -1,66 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" rel="preload" as="style" href="/css/main.css">
-    <meta name="darkreader-lock" />
-    <title>Quick Tarot</title>
-  </head>
-  <body>
-    <header>
-      <h1>Quick Tarot</h1>
-      <small
-        >by 🐈‍⬛&nbsp;<a href="https://github.com/gitmohamed" target="_blank"
-          >gitMohamed</a
-        ></small
-      >
-    </header>
-    <main>
-      <h3>
-        Click a button below to draw random cards from the deck
-      </h3>
-      <div id="board">
-        <!-- start empty -->
-        <span onclick="fetchCards(1)" class="active"><img style="cursor: pointer;" src="images/CardBacks.png" alt="The Lovers"><p>Click to Quick Draw</p></span>
-      </div>
-      <ul>
-        <li>
-          <a id="one"><button>⭐️ Draw One</button></a>
-        </li>
-        <li>
-          <a id="three"><button>✨ Draw Three</button></a>
-        </li>
-        <li>
-          <a id="five"><button>🌟 Draw Five</button></a>
-        </li>
-      </ul>
-    </main>
-    <footer>
-      <small>
-        <p><b>Made with</b></p>
-        <p><a href="https://github.com/ekelen/tarot-api">tarot-api</a> by <a href="https://github.com/ekelen">ekelen</a></p>
-        <p><a href="https://luciellaes.itch.io/rider-waite-smith-tarot-cards-cc0">Rider-Waite Smith Tarot Cards (CC0)</a> by Luciella Scarlett</p>
-        <p>Created using NodeJS and vanilla javascript.</p>
-        <p>Do your own research on cards and meanings.</p>
-      </small>
-    </footer>
-  </body>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-98NJC2X9CS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-98NJC2X9CS');
-  </script>
-  <script>
-    var board = document.querySelector("#board");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" rel="preload" as="style" href="/css/main.css">
+  <meta name="darkreader-lock" />
+  <title>Quick Tarot</title>
+</head>
 
-    async function fetchCards(count) {
-      await fetch(`/.netlify/functions/api/v1/cards/random?n=${count}`)
+<body>
+  <header>
+    <h1>Quick Tarot</h1>
+    <small>by 🐈‍⬛&nbsp;<a href="https://github.com/gitmohamed" target="_blank">gitMohamed</a></small>
+  </header>
+  <main>
+    <h3>
+      Click a button below to draw random cards from the deck
+    </h3>
+    <div id="board">
+      <!-- start empty -->
+      <span onclick="fetchCards(1)" class="active"><img style="cursor: pointer;" src="images/CardBacks.png"
+          class="blink" alt="The Lovers">
+        <p>Click to Quick Draw</p>
+      </span>
+    </div>
+    <ul>
+      <li>
+        <a id="one"><button>⭐️ Draw One</button></a>
+      </li>
+      <li>
+        <a id="three"><button>✨ Draw Three</button></a>
+      </li>
+      <li>
+        <a id="five"><button>🌟 Draw Five</button></a>
+      </li>
+    </ul>
+  </main>
+  <footer>
+    <small>
+      <p><b>Made with</b></p>
+      <p><a href="https://github.com/ekelen/tarot-api">tarot-api</a> by <a href="https://github.com/ekelen">ekelen</a>
+      </p>
+      <p><a href="https://luciellaes.itch.io/rider-waite-smith-tarot-cards-cc0">Rider-Waite Smith Tarot Cards (CC0)</a>
+        by Luciella Scarlett</p>
+      <p>Created using NodeJS and vanilla javascript.</p>
+      <p>Do your own research on cards and meanings.</p>
+    </small>
+  </footer>
+</body>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-98NJC2X9CS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-98NJC2X9CS');
+</script>
+<script>
+  var drawSound = new Audio('audio/dealing_card.mp3');
+  var board = document.querySelector("#board");
+
+  async function fetchCards(count) {
+    await fetch(`/.netlify/functions/api/v1/cards/random?n=${count}`)
       .then(function (response) {
         return response.json();
       })
@@ -71,53 +75,56 @@
         cards.forEach((card) => {
           createCardView(card)
         });
+        drawSound.play()
       })
       .catch(function (error) {
         // handle what went wrong
+        alert("Something went wrong. Try again.")
       });
+  }
+
+  function createCardView(card) {
+    var img = document.createElement("img");
+    var title = document.createElement("p");
+    var span = document.createElement("span");
+
+    span.append(img)
+    span.append(title)
+
+    title.textContent = card.name
+    setTimeout(() => {
+      span.className = 'active'
+    }, 300)
+    img.src = card.image
+    img.alt = card.name
+
+    board.append(span)
+  }
+
+  async function drawOneFromApi(e) {
+    if (!confirm("Confirm your query?")) {
+      return false;
     }
+    await fetchCards(1)
+  }
 
-    function createCardView(card) {
-      var img = document.createElement("img");
-      var title = document.createElement("p");
-      var span = document.createElement("span");
-
-      span.append(img)
-      span.append(title)
-
-      title.textContent = card.name
-      setTimeout(() => {
-        span.className = 'active'
-      }, 300)
-      img.src = card.image
-      img.alt = card.name
-
-      board.append(span)
+  async function drawThreeFromApi(e) {
+    if (!confirm("Confirm your query?")) {
+      return false;
     }
+    await fetchCards(3)
+  }
 
-    async function drawOneFromApi(e) {
-      if(!confirm("Confirm your query?")) {
-        return false;
-      }
-      await fetchCards(1)
+  async function drawFiveFromApi(e) {
+    if (!confirm("Confirm your query?")) {
+      return false;
     }
+    await fetchCards(5)
+  }
 
-    async function drawThreeFromApi(e) {
-      if(!confirm("Confirm your query?")) {
-        return false;
-      }
-      await fetchCards(3)
-    }
+  document.querySelector("#one").addEventListener("click", drawOneFromApi);
+  document.querySelector("#three").addEventListener("click", drawThreeFromApi);
+  document.querySelector("#five").addEventListener("click", drawFiveFromApi);
+</script>
 
-    async function drawFiveFromApi(e) {
-      if(!confirm("Confirm your query?")) {
-        return false;
-      }
-      await fetchCards(5)
-    }
-
-    document.querySelector("#one").addEventListener("click", drawOneFromApi);
-    document.querySelector("#three").addEventListener("click", drawThreeFromApi);
-    document.querySelector("#five").addEventListener("click", drawFiveFromApi);
-  </script>
 </html>
