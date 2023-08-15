@@ -93,6 +93,7 @@ body {
     transform-style: preserve-3d;
     transform: rotateY(90deg);
     transition: transform 0.3s ease-in-out;
+    will-change: transform;
     padding: 6px;
   }
   #board span p {
@@ -103,6 +104,11 @@ body {
     will-change: transform;
     transform: rotateY(0deg);
     transition: transform 0.5s cubic-bezier(0.18, 1.13, 0.9, 1.15);
+  }
+  #board span.flipped {
+    will-change: transform;
+    transform: rotateX(-180deg);
+    transition: transform 0.5s cubic-bezier(0, 1.16, 1, 0.99);
   }
   #board span img {
     height: 320px;
@@ -129,6 +135,12 @@ body {
   }
   #prompt {
     text-decoration: line-through;
+  }
+
+  .github-link {
+    position: fixed;
+    right: 0;
+    top: 0;
   }
 
   footer {
