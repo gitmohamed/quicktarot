@@ -31,7 +31,7 @@
         <p>Click to Quick Draw</p>
       </span>
     </div>
-    <ul>
+    <ul id="controls">
       <li>
         <a id="one"><button>⭐️ Draw One</button></a>
       </li>
@@ -69,6 +69,16 @@
   var board = document.querySelector("#board");
 
   async function fetchCards(count) {
+    if(count === 1 && board.querySelector(".active img").src.includes("images/CardBacks.png")) {
+      board.querySelector(".active").animate([
+        { transform: "rotateY(0deg)" },
+        { transform: "rotateY(90deg)" },
+      ], {
+        duration: 200,
+        iterations: 1,
+        fill: "both"
+      })
+    }
     await fetch(`/.netlify/functions/api/v1/cards/random?n=${count}`)
       .then(function (response) {
         return response.json();
@@ -96,6 +106,8 @@
 
     title.textContent = card.name
     setTimeout(() => {
+      img.src = card.image
+      img.alt = card.name
       span.className = 'active'
       // coin flip
       if(Math.round(Math.random(1)*100) > 9) {
@@ -109,9 +121,7 @@
       }
 
       drawSound.play()
-    }, 300)
-    img.src = card.image
-    img.alt = card.name
+    }, 200)
 
     board.append(span)
   }
