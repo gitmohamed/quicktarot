@@ -4,7 +4,7 @@
 
 # Quick Tarot
 
-Quick Tarot is a NodeJS and vanilla JavaScript application that allows you to draw random tarot cards. It is hosted on Netlify using a serverless setup, providing a fast and efficient way to generate sets of randomized cards. The application combines the Tarot Car API (below) with the original Rider-Waite Smith cards, which have been made accessible by Luciella Scarlett. 
+Quick Tarot is a NodeJS and vanilla JavaScript application that allows you to draw random tarot cards. Providing a fast and efficient way to generate sets of randomized cards, the application combines the Tarot Car API (below) with the original Rider-Waite Smith cards, which have been made accessible by Luciella Scarlett. 
 
 ---
 
