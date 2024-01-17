@@ -60,6 +60,14 @@
     max-width: 95vw;
     margin: 2rem auto;
   }
+  main .instruct {
+    padding: 0.1rem;
+    background: #33333333;
+    border-radius: 10px;
+    display: block;
+    font-style: italic;
+    border: 1px solid #444;
+  }
   main h3 {
     text-align: center;
   }
